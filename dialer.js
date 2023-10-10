@@ -45,7 +45,7 @@ async function run () {
         stdinToStream(stream);
         return streamToConsole(stream);
     })
-    .catch((error) => {
+    .catch((error) => {     
         // Handle any errors
         console.error('An error occurred:', error);
     });
@@ -53,17 +53,6 @@ async function run () {
     
    
 }); 
-  //console.log(listenerma)
-  // Dial to the remote peer (the "listener") // maybe take this as an argument we will figure out how do some cool shit with this
-  //const listenerMa = multiaddr(listenerma) //over the network 
-  //const stream = await nodeDialer.dialProtocol(listenerMa, '/chat/1.0.0') //even when this is commented out we establish a connection that is very werid innit
-
-  
-
-  // Send stdin to the stream
-  //stdinToStream(stream)
-  // Read the stream and output to console
-  //streamToConsole(stream)
 }
 
 run()

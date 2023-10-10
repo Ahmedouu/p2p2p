@@ -38,13 +38,15 @@
     "@libp2p/websockets": "^7.0.0",
     "@multiformats/multiaddr": "^12.1.5",
     "@nodeutils/defaults-deep": "^1.1.0",
+    "axios": "^1.5.1",
+    "bonjour": "^3.5.0",
     "it-length-prefixed": "^9.0.1",
     "it-map": "^3.0.3",
     "it-pipe": "^3.0.1",
     "libp2p": "^0.46.0",
     "public-ip": "^6.0.1",
-    "ws": "^8.2.3",
-    "uint8arrays": "^4.0.6"
+    "uint8arrays": "^4.0.6",
+    "ws": "^8.2.3"
   },
   "devDependencies": {
     "aegir": "^41.0.2",

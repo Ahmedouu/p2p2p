@@ -1,20 +1,17 @@
-import WebSocket from 'ws';
+import axios from 'axios';
+import { WebSocketServer } from 'ws';
 
-const ws = new WebSocket('ws://localhost:8080');
+let pIp;
 
-async function run() {
-    ws.on('open', () => {
-        ws.send('getMultiaddr');
-        
-    });
+// Make an HTTP request to get the public IP address
+axios.get('https://api.ipify.org?format=json')
+  .then((response) => {
+    pIp = response.data.ip;
+    
+  })
+  .catch((error) => {
+    console.error('Error fetching public IP:', error);
+  });
 
-    ws.on('message', (multiaddr) => {
-        
-        // Now you can use multiaddr
-        console.log(multiaddr.toString());
 
-        // ... your code ...
-    });
-}
-
-run();
+  const wss = new WebSocketServer({ host: pIp, port: 8080 })
