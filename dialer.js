@@ -6,7 +6,8 @@ import peerIdDialerJson from './peer-id-dialer.js'
 import { stdinToStream, streamToConsole } from './stream.js'
 import WebSocket from 'ws';
 
-const ws = new WebSocket('ws://localhost:8080');
+
+const ws = new WebSocket(`ws://10.30.10.116:8080`);
 
 async function run () {
   const [idDialer] = await Promise.all([
