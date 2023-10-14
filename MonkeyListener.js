@@ -6,13 +6,13 @@ import peerIdListenerJson from './peer-id-listener.js'
 import { stdinToStream, streamToConsole } from './stream.js'
 import { WebSocketServer } from 'ws'
 
-
+//Monkey must change this “ooh-ooh aah-aah!” 🐒
 const wss = new WebSocketServer({ host: '192.168.56.1', port: 8080 })
 let multiaddr = null
 
 async function run () {
 
-   // Create a new libp2p node with the given multi-address
+  // Create a new libp2p node with the given multi-address
   const idListener = await createFromJSON(peerIdListenerJson)
   const nodeListener = await createLibp2p({
     peerId: idListener,

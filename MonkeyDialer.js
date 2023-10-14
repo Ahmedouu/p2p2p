@@ -6,7 +6,7 @@ import peerIdDialerJson from './peer-id-dialer.js'
 import { stdinToStream, streamToConsole } from './stream.js'
 import WebSocket from 'ws';
 
-
+//Monkey must change this “ooh-ooh aah-aah!” 🐒
 const ws = new WebSocket(`ws://192.168.56.1:8080`);
 
 async function run () {
@@ -18,7 +18,7 @@ async function run () {
   const nodeDialer = await createLibp2p({
     peerId: idDialer,
     addresses: {
-      listen: [`/ip4/0.0.0.0/tcp/0`] // use network id automate this maybe
+      listen: [`/ip4/0.0.0.0/tcp/0`] 
     }
   })
 

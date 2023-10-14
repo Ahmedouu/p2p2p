@@ -33,21 +33,19 @@ async function run(){
           streamToConsole(stream)
 })
     multiaddr = nodeListener.getMultiaddrs()[0].toString(); 
-         console.log(' i put my life on da line for you ', multiaddr)
+         console.log('Multiaddr in the house -->', multiaddr)
   
-//Output listen addresses to the console
+//listen addresses 
     console.log('Listener ready, listening on:')
     nodeListener.getMultiaddrs().forEach((ma) => {
               console.log(ma.toString())
-//multiaddr
 })
-//Websocket to send the multiaddr across the processes
+//Websocket to send the multiaddr across the processes 
     wss.on('connection', (ws) => {
             console.log('connected')
     ws.on('message', (message) => {
  
       if (message.toString() === 'getMultiaddr') {
-       
           ws.send(multiaddr);
       }
   });
