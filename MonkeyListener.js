@@ -7,7 +7,7 @@ import { stdinToStream, streamToConsole } from './stream.js'
 import { WebSocketServer } from 'ws'
 
 
-const wss = new WebSocketServer({ host: '0.0.0.0', port: 8080 })
+const wss = new WebSocketServer({ host: '192.168.56.1', port: 8080 })
 let multiaddr = null
 
 async function run () {

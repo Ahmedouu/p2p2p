@@ -7,7 +7,7 @@ import { stdinToStream, streamToConsole } from './stream.js'
 import WebSocket from 'ws';
 
 
-const ws = new WebSocket(`ws://0.0.0.0:8080`);
+const ws = new WebSocket(`ws://192.168.56.1:8080`);
 
 async function run () {
   const [idDialer] = await Promise.all([

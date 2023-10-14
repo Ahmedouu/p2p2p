@@ -57,6 +57,7 @@ async function run(){
 mdns().on('query', function(query) {
   if (query.questions[0] && query.questions[0].name === 'peepee-server.local') {
     console.log("You have found Me")
+    console.log(query)
     mdns().respond({
       answers: [{
         name: 'peepee-server.local',
