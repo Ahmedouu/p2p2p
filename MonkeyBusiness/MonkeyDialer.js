@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import { createFromJSON } from '@libp2p/peer-id-factory'
 import { multiaddr } from '@multiformats/multiaddr'
-import { createLibp2p } from './libp2p.js'
-import peerIdDialerJson from './peer-id-dialer.js'
-import { stdinToStream, streamToConsole } from './stream.js'
+import { createLibp2p } from '../utils/libp2p.js'
+import peerIdDialerJson from '../utils/peer-id-dialer.js'
+import { stdinToStream, streamToConsole } from '../utils/stream.js'
 import WebSocket from 'ws';
 
 //Monkey must change this “ooh-ooh aah-aah!” 🐒

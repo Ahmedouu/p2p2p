@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 //le-peepee stuff
 import { createFromJSON } from '@libp2p/peer-id-factory'
-import { createLibp2p } from './libp2p.js'
-import peerIdListenerJson from './peer-id-listener.js'
-import { stdinToStream, streamToConsole } from './stream.js'
+import { createLibp2p } from './utils/libp2p.js'
+import peerIdListenerJson from './utils/peer-id-listener.js'
+import { stdinToStream, streamToConsole } from './utils/stream.js'
 //mdns + websockets
 import mdns from 'multicast-dns';
 import { WebSocketServer } from 'ws'
-import {getPrivateIP}  from './privateIP.js';
+import {getPrivateIP}  from './utils/privateIP.js';
 const pIp = getPrivateIP()
 const wss = new WebSocketServer({host: pIp,  port: 8080 });
 let multiaddr = null

@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 //import os from 'os'
 import { createFromJSON } from '@libp2p/peer-id-factory'
-import { createLibp2p } from './libp2p.js'
-import peerIdListenerJson from './peer-id-listener.js'
-import { stdinToStream, streamToConsole } from './stream.js'
+import { createLibp2p } from '../libp2p.js'
+import peerIdListenerJson from '../peer-id-listener.js'
+import { stdinToStream, streamToConsole } from '../stream.js'
 import { WebSocketServer } from 'ws'
 
 //Monkey must change this “ooh-ooh aah-aah!” 🐒

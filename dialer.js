@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import { createFromJSON } from '@libp2p/peer-id-factory'
 import { multiaddr } from '@multiformats/multiaddr'
-import { createLibp2p } from './libp2p.js'
-import peerIdDialerJson from './peer-id-dialer.js'
-import { stdinToStream, streamToConsole } from './stream.js'
+import { createLibp2p } from './utils/libp2p.js'
+import peerIdDialerJson from './utils/peer-id-dialer.js'
+import { stdinToStream, streamToConsole } from './utils/stream.js'
 import mdns from "multicast-dns"
 import WebSocket from 'ws';
-import { getPrivateIP } from './privateIP.js'
+import { getPrivateIP } from './utils/privateIP.js'
 let Answer;
 const privateIP = getPrivateIP()
 async function run() {
@@ -15,7 +15,6 @@ async function run() {
     createFromJSON(peerIdDialerJson)
   ])
 
-  // Create a new libp2p node on localhost with a randomly chosen port
   const nodeDialer = await createLibp2p({
     peerId: idDialer,
     addresses: {
@@ -36,12 +35,11 @@ mdns().on('response', function(response) {
 
         const wss = new WebSocket(`ws://${Answer}:8080`)
        
-    //Vodoo
+    //Vodoo  
        wss.on('open', () => {
         wss.send('getMultiaddr');
         
     });
-    
       wss.on('message', (multiAddr) => {
   
         const listenerma = multiAddr.toString()
