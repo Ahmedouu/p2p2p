@@ -29,7 +29,7 @@ async function run() {
 
 mdns().on('response', function(response) {
     response.answers.forEach(answer => {
-      if (answer.name ==='peepee-server.local') { //A quiet conscience makes one strong.
+      if (answer.name ==='peepee-server.local') { //Find the websocket 
         console.log(`Discovered WebSocket server at IP address: ${answer.data}`);
         Answer = answer.data;
 
