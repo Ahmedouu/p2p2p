@@ -35,7 +35,7 @@ mdns().on('response', function(response) {
 
         const wss = new WebSocket(`ws://${Answer}:8080`)
        
-    //Vodoo  
+    //initiate wss connection to get the multiaddr after creation then talk with the listener node, maybe could write this outside of the mdns response
        wss.on('open', () => {
         wss.send('getMultiaddr');
         
@@ -44,9 +44,9 @@ mdns().on('response', function(response) {
   
         const listenerma = multiAddr.toString()
         const listenerMa = multiaddr(listenerma)
+        //dial listener then talk 
         nodeDialer.dialProtocol(listenerMa, '/chat/1.0.0')
         .then((stream) => {
-            // Call both functions with the same stream
             console.log('Dialer dialed to listener on protocol: /chat/1.0.0')
             console.log('Type a message and see what happens')
             stdinToStream(stream);
@@ -60,7 +60,7 @@ mdns().on('response', function(response) {
     });
   });
 
-
+  //mdns query from dialer
     mdns().query({
     questions: [{
       name: 'peepee-server.local',
