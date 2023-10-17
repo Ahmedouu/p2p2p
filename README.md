@@ -6,7 +6,7 @@ So MDNS + websockets + libp2p , just for fun I guess.
 
 You have a dialer and a listener, run them on different machines or on the same machine, up to you.
 
-Maybe disable your firewall when the listener is on windows machine.
+Maybe disable your firewall when the listener is on a windows machine.
 
 # ToDo/Notes:
 
