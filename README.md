@@ -22,4 +22,4 @@ Remove Websockets,  they are only needed for the multiaddr, only if there is way
 # Questions
 
 It's possible to get two dialers with the same peerId connected to one listener, but why ? 
-Of course theeses dialers will have communication with the listener but not between each other, like a groupchat.
+Of course theeses dialers will have communication with the listener but not between each other.
