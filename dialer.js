@@ -32,7 +32,7 @@ mdns().on('response', function(response) {
       if (answer.name ==='peepee-server.local') { //Find the websocket 
         console.log(`Discovered WebSocket server at IP address: ${answer.data}`);
         Answer = answer.data;
-
+  
         const wss = new WebSocket(`ws://${Answer}:8080`)
        
     //initiate wss connection to get the multiaddr after creation then talk with the listener node, maybe could write this outside of the mdns response
