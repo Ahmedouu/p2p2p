@@ -8,7 +8,8 @@ import { stdinToStream, streamToConsole } from './utils/stream.js'
 import mdns from 'multicast-dns';
 import { WebSocketServer } from 'ws'
 import {getPrivateIP}  from './utils/privateIP.js';
-const pIp = getPrivateIP()
+"const pIp = getPrivateIP()"
+const pIp = "10.30.10.113"
 const wss = new WebSocketServer({host: pIp,  port: 8080 });
 let multiaddr = null
 
@@ -60,7 +61,7 @@ mdns().on('query', function(query) {
       answers: [{
         name: 'peepee-server.local',
         type: 'A',
-        data: pIp 
+        data: pIp
       }]
     });
   }
