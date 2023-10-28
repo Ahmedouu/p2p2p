@@ -11,7 +11,7 @@ node dialer.js
 ```
 # The listener and the dialer can be on the same machine or on different machines within the same network.
 
-Maybe disable your firewall when the listener is on a windows machine.
+Maybe disable your firewall when the listener is on a windows machine, just maybe I did need to though.
 
 # ToDo/Notes:
 
