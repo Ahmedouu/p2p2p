@@ -22,4 +22,15 @@ mdns().on('response', function(response) {
     }
   });
 });*/
+
+
+mdns().on('response', function(response){
+  response.answers.forEach(answer =>{
+      console.log(answer)
+
+  
+  })
+
+
+})
 console.log('Client is waiting for a response!..')
