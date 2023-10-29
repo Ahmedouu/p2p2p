@@ -10,7 +10,7 @@ import mdns from 'multicast-dns';
     type: 'A'
   }]
 });
-/*
+
 mdns().on('response', function(response) {
   response.answers.forEach(answer => {
     if (answer.name ==='peepee-server.local') { //Find the websocket 
@@ -21,16 +21,8 @@ mdns().on('response', function(response) {
       
     }
   });
-});*/
+});
 
 
-mdns().on('response', function(response){
-  response.answers.forEach(answer =>{
-      console.log(answer)
 
-  
-  })
-
-
-})
 console.log('Client is waiting for a response!..')
