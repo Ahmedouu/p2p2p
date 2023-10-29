@@ -1,19 +1,25 @@
 import mdns from 'multicast-dns';
 
 
-mdns().query({
-  questions:[{
-    name: 'ip-address',
+
+mdns().on('response', function(response) {
+  response.answers.forEach(answer => {
+    if (answer.name ==='peepee-server.local') { //Find the websocket 
+      console.log(`Discovered WebSocket server at IP address: ${answer.data}`);
+      const Answer = answer.data;
+      console.log(Answer);
+
+      
+    }
+  });
+});
+
+//mdns query from dialer
+  mdns().query({
+  questions: [{
+    name: 'peepee-server.local',
     type: 'A'
   }]
 });
 
-mdns().on('response', function(response) {
-  const answer = response.answers[0];
-  if (answer && answer.name === 'ip-address') {
-    console.log('IP Address:', answer.data);
-  }
-});
-
-
-console.log('Client is discovering the service');
+console.log('Client is waiting for a response!..')
