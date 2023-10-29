@@ -1,23 +1,19 @@
 import mdns from 'multicast-dns';
 
 
-const serviceName = "fuckyoumean"
-
 mdns().query({
-  questions: [{
-    name: 'fuckyoumean',
+  questions:[{
+    name: 'ip-address',
     type: 'A'
   }]
-})
-
-mdns().on('response', (response) => {
-  response.answers.forEach((answer) => {
-    if (answer.name === serviceName && answer.type === 'A') {
-      console.log(`Received IP address from the server: ${answer.data}`);
-    }
-  });
 });
 
+mdns().on('response', function(response) {
+  const answer = response.answers[0];
+  if (answer && answer.name === 'ip-address') {
+    console.log('IP Address:', answer.data);
+  }
+});
 
 
 console.log('Client is discovering the service');
