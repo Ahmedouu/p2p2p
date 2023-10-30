@@ -1,17 +1,14 @@
 import mdns from 'multicast-dns';
-
-
-
-
+const mdnsInstance = mdns();
 //mdns query from dialer
-  mdns().query({
+  mdnsInstance.query({
   questions: [{
     name: 'peepee-server.local',
     type: 'A'
   }]
 });
 
-mdns().on('response', function(response) {
+mdnsInstance.on('response', function(response) {
   response.answers.forEach(answer => {
     if (answer.name ==='peepee-server.local') { //Find the websocket 
       console.log(`Discovered WebSocket server at IP address: ${answer.data}`);
