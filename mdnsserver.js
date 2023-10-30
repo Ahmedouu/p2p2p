@@ -1,5 +1,6 @@
 import mdns from 'multicast-dns';
-const pIp = '10.30.10.113';
+import { getPrivateIP } from './utils/privateIP.js';
+const pIp = getPrivateIP();
 
 
 const mdnsInstance = mdns();

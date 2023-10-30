@@ -1,4 +1,15 @@
-/* i WILL USE THIS TO CHECK DIFFERENT IMPLEMENTATIONS AND THEIR SPEED, THIS WILL FILE WILL HAVE DIFFERENT IMPLEMENTATIONS FOR THE DIALER AND THE LISTENER AND PREFORMANCE NOTES */
+/* i WILL USE THIS TO CHECK DIFFERENT IMPLEMENTATIONS AND THEIR SPEED, THIS WILL FILE WILL HAVE DIFFERENT IMPLEMENTATIONS FOR THE DIALER AND THE LISTENER AND PREFORMANCE NOTES 
+*
+* email: 7medouu@gmail.com
+*
+*
+*Cool things I learned:
+
+*-Websockets don't care about NAT, also despite my firewall being on I am always able to establish a connection. If you have any issue with this on windows there are so many ways around this (tunnels, NAT punching etc...)
+
+*-mDNS doesn't work the way I thought it works, it's a query-response mechanism similar to the client-server concept, but the client is always aware of all the servers on the network and you need to filter to the server you want. ;)
+
+*/
 
 
 /*IMPROVE THE READIBILTY BY ALLOWING THE DIALER TO LOOK NICE AND MAKING THE MESSAGE LESS LONGER BY CREATING ANOTHER FUNCTION TO HANDLE THE CHATTING AFTER ESTABLISHING WEBSOCKET CONNECTION*/
