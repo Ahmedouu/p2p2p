@@ -1,6 +1,6 @@
 import mdns from 'multicast-dns';
 import WebSocket from 'ws';
-/*update the mdns client with websockets ? when the server is on ubuntu it is refusing to connect*/
+/*Demo PING PONG to test MDNS + WEBSOCKETS BEFORE ADDING LIBP2P*/
 const mdnsInstance = mdns();
 //mdns query from dialer
   mdnsInstance.query({
@@ -11,8 +11,8 @@ const mdnsInstance = mdns();
 });
 
 mdnsInstance.on('response', function(response) {
-  response.answers.forEach(answer => {
-    if (answer.name ==='peepee-server.local') { //Find the websocket 
+  response.answers.forEach(answer => { // THIS METHOD might make the processing a little unstable since it has to sort through all the mdns responses to find the right one
+    if (answer.name ==='peepee-server.local') { //Find the websocket,  
       console.log(`Discovered WebSocket server at IP address: ${answer.data}`);
       let Answer = answer.data;
       console.log(Answer);

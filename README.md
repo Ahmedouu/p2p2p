@@ -15,8 +15,7 @@ Maybe disable your firewall when the listener is on a windows machine, just mayb
 
 # ToDo/Notes:
 
-
-As for the broken packages on ubuntu (ubuntu is trash) but here is what happens, it's able to query but not process any answers ?? also when you ask it to broadcast it simply doesn't receive any queries, it's however able to find random responses from other devices, but not answer any specific questions.
+so currently this works both ways windows <-> linux but sometimes it might stops and not respond to the query right away  
 
 Remove Websockets,  they are only needed for the multiaddr, only if there is way to get mdns() to respond with the multiaddr when the query exchange happens.
 

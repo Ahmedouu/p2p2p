@@ -1,6 +1,7 @@
 import mdns from 'multicast-dns';
 import { getPrivateIP } from './utils/privateIP.js';
 import {WebSocketServer} from 'ws';
+/*Demo PING PONG to test MDNS + WEBSOCKETS BEFORE ADDING LIBP2P*/
 const pIp = getPrivateIP();
 
 const wss = new WebSocketServer({ host: pIp, port: 8080 });
@@ -19,6 +20,7 @@ mdnsInstance.on('query', async function(query) {
     });
   }
 });
+/* we don't have a problem here with establish connection ubuntu server windows client*/
 wss.on('connection', (ws) => {
   console.log('Client connected');
 
