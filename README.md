@@ -15,7 +15,7 @@ Maybe disable your firewall when the listener is on a windows machine, just mayb
 
 # ToDo/Notes:
 
-so currently this works both ways windows <-> linux but sometimes it might stops and not respond to the query right away  
+so currently this works both ways windows <-> linux but sometimes it might stops and not respond to the query right away, need to find a better way to handle the reponse.
 
 Remove Websockets,  they are only needed for the multiaddr, only if there is way to get mdns() to respond with the multiaddr when the query exchange happens.
 
