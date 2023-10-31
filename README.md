@@ -15,8 +15,8 @@ Maybe disable your firewall when the listener is on a windows machine, just mayb
 
 # ToDo/Notes:
 
-so currently this works both ways windows <-> linux but sometimes it might stop and not process to the reponse in the dialer, need to find a better way to handle the reponse, mdns is not very reliable ...
-
+so currently this works both ways windows <-> linux but sometimes it might stop and not process to the reponse in the dialer, need to find a better way to handle the reponse, mdns is not very reliable in this implementation and I think it's because there are so many services running bonjour and loooping over the responses to find the one we want is not a stable approach.
+Sometimes it works sometimes it doesn't depends ..
 
 # Questions
 
