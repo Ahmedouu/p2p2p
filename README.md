@@ -15,11 +15,12 @@ Maybe disable your firewall when the listener is on a windows machine, just mayb
 
 # ToDo/Notes:
 
-so currently this works both ways windows <-> linux but sometimes it might stop and not respond to the query in the dialer, need to find a better way to handle the reponse, mdns is not very reliable ...
+so currently this works both ways windows <-> linux but sometimes it might stop and not process to the reponse in the dialer, need to find a better way to handle the reponse, mdns is not very reliable ...
 
-Remove Websockets,  they are only needed for the multiaddr, only if there is way to get mdns() to respond with the multiaddr when the query exchange happens.
 
 # Questions
 
 It's possible to get two dialers with the same peerId connected to one listener, but why ? 
 Of course theeses dialers will have communication with the listener but not between each other.
+
+Remove Websockets,  they are only needed for the multiaddr, only if there is way to get mdns() to respond with the multiaddr when the query exchange happens?
